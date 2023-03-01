@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cculvcbekoyq"
+path="res://.godot/imported/RIGHT-0-DOOR_1A.obj-e70696155e55f6202405fba0b7f61b4f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RIGHT-0-DOOR_1A.obj-e70696155e55f6202405fba0b7f61b4f.mesh"]
+
+source_file="res://dat/models/Door_1A/RIGHT-0-DOOR_1A.obj"
+dest_files=["res://.godot/imported/RIGHT-0-DOOR_1A.obj-e70696155e55f6202405fba0b7f61b4f.mesh", "res://.godot/imported/RIGHT-0-DOOR_1A.obj-e70696155e55f6202405fba0b7f61b4f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

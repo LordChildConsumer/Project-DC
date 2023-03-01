@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vu5vfxcdljpt"
+path="res://.godot/imported/LEFT.obj-69d041e04a3967ca5798b82918690cac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LEFT.obj-69d041e04a3967ca5798b82918690cac.mesh"]
+
+source_file="res://dat/models/Door_1A/LEFT.obj"
+dest_files=["res://.godot/imported/LEFT.obj-69d041e04a3967ca5798b82918690cac.mesh", "res://.godot/imported/LEFT.obj-69d041e04a3967ca5798b82918690cac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

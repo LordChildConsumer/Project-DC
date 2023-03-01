@@ -1,0 +1,12 @@
+Floors:
+
+Walls:
+	TECH_0A:
+		Normal:
+			Enhance:
+				Height: 250
+				Soft: 0
+			Bump:
+				Height: 0
+				Distance: 60
+				Soft: 10
