@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buyu7p7ceiyu6"
-path="res://.godot/imported/AutoShotgunGuy.png-553fd9b558d324c06aaa7c100aeae52b.ctex"
+path="res://.godot/imported/AutoShotgunGuy.png-533013928b99dc9bd761cf531527b0de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dat/sprites/enemies/AutoShotgunGuy.png"
-dest_files=["res://.godot/imported/AutoShotgunGuy.png-553fd9b558d324c06aaa7c100aeae52b.ctex"]
+source_file="res://dat/enemies/AutoShotgunGuy.png"
+dest_files=["res://.godot/imported/AutoShotgunGuy.png-533013928b99dc9bd761cf531527b0de.ctex"]
 
 [params]
 

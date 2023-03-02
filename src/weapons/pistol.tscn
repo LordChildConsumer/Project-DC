@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhknhotvf2l32"]
+
+[ext_resource type="PackedScene" uid="uid://bv2gb4c7wph65" path="res://src/weapons/weapon.tscn" id="1_6s5lm"]
+[ext_resource type="Texture2D" uid="uid://c04bjvlth70uq" path="res://dat/weapons/colt45/shoot_sheet.png" id="2_ytpwb"]
+[ext_resource type="AudioStream" uid="uid://fj6555vw5im1" path="res://dat/weapons/colt45/coltfire.wav" id="3_nov1l"]
+
+[sub_resource type="Animation" id="Animation_llsmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Viewmodel/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_q1fxi"]
+resource_name = "shoot"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Viewmodel/ShootSND")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Viewmodel/Control/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MuzzleFlash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4f02j"]
+_data = {
+"RESET": SubResource("Animation_llsmw"),
+"shoot": SubResource("Animation_q1fxi")
+}
+
+[node name="Pistol" instance=ExtResource("1_6s5lm")]
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_4f02j")
+}
+
+[node name="Control" parent="Viewmodel" index="0"]
+offset_left = -13.0
+offset_top = 0.0
+offset_right = -13.0
+
+[node name="Sprite2D" parent="Viewmodel/Control" index="0"]
+position = Vector2(61, 82)
+scale = Vector2(4, 4)
+texture = ExtResource("2_ytpwb")
+centered = true
+hframes = 5
+
+[node name="BOTCENT" parent="Viewmodel" index="1"]
+gizmo_extents = 500.0
+
+[node name="ShootSND" parent="Viewmodel" index="2"]
+stream = ExtResource("3_nov1l")
+
+[node name="raycast" parent="Bullets" index="0"]
+target_position = Vector3(0, 0, -20)
+
+[node name="MuzzleFlash" parent="." index="3"]
+visible = false
+light_color = Color(1, 0.498039, 0.105882, 1)
