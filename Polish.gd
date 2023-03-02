@@ -9,3 +9,6 @@ extends Node
 
 
 ## POLISH: Add space behind doors so they don't clip into the walls cuz it's scuffed
+
+
+## POLISH: Add slight glow to skulls/keys/pillars

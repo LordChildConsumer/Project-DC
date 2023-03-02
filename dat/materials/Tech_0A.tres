@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cy4xxv6bvl3t8"]
+
+[ext_resource type="Texture2D" uid="uid://bsg1hvrm2jwjn" path="res://dat/maps/textures/walls/TECH_0A.png" id="1_okvtx"]
+
+[resource]
+albedo_texture = ExtResource("1_okvtx")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+texture_filter = 0

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3rpmqukn56xf"]
+
+[ext_resource type="Texture2D" uid="uid://dli85xewnoj1x" path="res://dat/maps/textures/steel/STEEL_1A.png" id="1_qqiyc"]
+
+[resource]
+albedo_texture = ExtResource("1_qqiyc")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+texture_filter = 0

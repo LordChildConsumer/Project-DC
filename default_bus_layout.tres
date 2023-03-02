@@ -1,0 +1,19 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://cvoh8dnut78ew"]
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_1if0y"]
+resource_name = "Limiter"
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_4xsof"]
+resource_name = "Limiter"
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectLimiter_1if0y")
+bus/0/effect/0/enabled = true
+bus/1/name = &"Player"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Palyer 2"
+bus/1/effect/0/effect = SubResource("AudioEffectLimiter_4xsof")
+bus/1/effect/0/enabled = true

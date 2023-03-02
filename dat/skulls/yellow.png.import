@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsg1hvrm2jwjn"
-path.s3tc="res://.godot/imported/TECH_0A.png-6dabb8ef665e68724ce9e069cc99b37c.s3tc.ctex"
+uid="uid://c33q4wdtvn2vc"
+path="res://.godot/imported/yellow.png-37421fd2226ee05a632335245779751d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://dat/materials/textures/walls/TECH_0A.png"
-dest_files=["res://.godot/imported/TECH_0A.png-6dabb8ef665e68724ce9e069cc99b37c.s3tc.ctex"]
+source_file="res://dat/skulls/yellow.png"
+dest_files=["res://.godot/imported/yellow.png-37421fd2226ee05a632335245779751d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

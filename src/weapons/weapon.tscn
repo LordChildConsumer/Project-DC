@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv2gb4c7wph65"]
+[gd_scene load_steps=3 format=3 uid="uid://bv2gb4c7wph65"]
 
 [ext_resource type="Script" path="res://src/weapons/weapon.gd" id="1_13yby"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfvss"]
+font_size = 24
 
 [node name="Weapon" type="Node3D"]
 script = ExtResource("1_13yby")
@@ -31,6 +34,26 @@ position = Vector2(640, 720)
 gizmo_extents = 250.0
 
 [node name="ShootSND" type="AudioStreamPlayer" parent="Viewmodel"]
+
+[node name="Ammo" type="MarginContainer" parent="Viewmodel"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Counter" type="Label" parent="Viewmodel/Ammo"]
+layout_mode = 2
+text = "X/YY"
+label_settings = SubResource("LabelSettings_jfvss")
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="Bullets" type="Node3D" parent="."]
 

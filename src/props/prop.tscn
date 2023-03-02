@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c0iaabldw3gf7"]
+
+[node name="Prop" type="Node3D"]
+
+[node name="Sprite" type="Sprite3D" parent="."]
+
+[node name="col" type="CollisionShape3D" parent="."]

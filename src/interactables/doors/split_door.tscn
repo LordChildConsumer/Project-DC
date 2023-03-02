@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg2b3bc4a52hf"]
+[gd_scene load_steps=14 format=3 uid="uid://dbah5iljp43xj"]
 
 [ext_resource type="PackedScene" uid="uid://5tbghf54736e" path="res://src/interactables/interactable.tscn" id="1_lar3n"]
+[ext_resource type="Script" path="res://src/interactables/doors/split_door.gd" id="2_dsyvr"]
 [ext_resource type="ArrayMesh" uid="uid://vu5vfxcdljpt" path="res://dat/models/Door_1A/LEFT.obj" id="2_hjmo5"]
-[ext_resource type="Script" path="res://src/interactables/doors/split_door.gd" id="2_mhd40"]
-[ext_resource type="AudioStream" uid="uid://bk73jpbtm6ean" path="res://dat/audio/sounds/doors/Doom-Door-Close-Short.mp3" id="3_h64gy"]
+[ext_resource type="AudioStream" uid="uid://e1hx6tmcxp8x" path="res://dat/audio/sounds/doors/Doom-Door-Close.mp3" id="3_xiudo"]
 [ext_resource type="ArrayMesh" uid="uid://cculvcbekoyq" path="res://dat/models/Door_1A/RIGHT-0-DOOR_1A.obj" id="3_xol44"]
-[ext_resource type="AudioStream" uid="uid://b1ns3p60wc2kj" path="res://dat/audio/sounds/doors/Doom-Door-Open-Short.mp3" id="4_bosfy"]
+[ext_resource type="AudioStream" uid="uid://c40wr71shehml" path="res://dat/audio/sounds/doors/Doom-Door-Open.mp3" id="4_xlkye"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1sutp"]
 size = Vector3(4, 4, 1)
@@ -58,12 +58,12 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_bosfy")]
+"values": [ExtResource("4_xlkye")]
 }
 
 [sub_resource type="Animation" id="Animation_3e1dv"]
 resource_name = "close"
-length = 0.5
+length = 1.3
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -72,7 +72,7 @@ tracks/0/path = NodePath("Doors/Left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-4.297, 0, 0), Vector3(0, 0, 0)]
@@ -84,7 +84,7 @@ tracks/1/path = NodePath("Doors/Right:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(4.297, 0, 0), Vector3(0, 0, 0)]
@@ -111,12 +111,12 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_h64gy")]
+"values": [ExtResource("3_xiudo")]
 }
 
 [sub_resource type="Animation" id="Animation_g37jn"]
 resource_name = "open"
-length = 0.5
+length = 1.3
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -125,7 +125,7 @@ tracks/0/path = NodePath("Doors/Left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-4.297, 0, 0)]
@@ -137,7 +137,7 @@ tracks/1/path = NodePath("Doors/Right:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(4.297, 0, 0)]
@@ -164,7 +164,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_bosfy")]
+"values": [ExtResource("4_xlkye")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1hoj7"]
@@ -180,10 +180,11 @@ size = Vector3(4.4, 6.3, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1bk5"]
 size = Vector3(4.4, 6.3, 1)
 
-[node name="SplitDoor" instance=ExtResource("1_lar3n")]
+[node name="SplitDoor" groups=["door"] instance=ExtResource("1_lar3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 collision_mask = 2
-script = ExtResource("2_mhd40")
+script = ExtResource("2_dsyvr")
+key_color = 0
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_1sutp")
@@ -222,8 +223,8 @@ shape = SubResource("BoxShape3D_n1bk5")
 
 [node name="DoorSound" type="AudioStreamPlayer3D" parent="Doors" index="2"]
 transform = Transform3D(1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 1.5625, 0, 0, 0)
-stream = ExtResource("4_bosfy")
-max_distance = 10.0
+stream = ExtResource("4_xlkye")
+max_distance = 20.0
 
 [node name="AutoClose" type="Timer" parent="." index="3"]
 wait_time = 3.0

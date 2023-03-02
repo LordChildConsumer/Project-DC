@@ -1,303 +1,48 @@
-[gd_scene load_steps=27 format=3 uid="uid://lnvw1shlvgml"]
+[gd_scene load_steps=7 format=3 uid="uid://lnvw1shlvgml"]
 
 [ext_resource type="PackedScene" uid="uid://0kvmbhg0w32k" path="res://src/levels/level.tscn" id="1_q3oq5"]
 [ext_resource type="PackedScene" uid="uid://c8dgobnvoj4sw" path="res://src/player/player.tscn" id="2_4756e"]
-[ext_resource type="Material" uid="uid://b3gijf5i3fwu4" path="res://dat/materials/FLOOR_1A.tres" id="3_d2f8e"]
-[ext_resource type="Material" uid="uid://ceiu2iohrlddl" path="res://dat/materials/TECH_0A.tres" id="4_qtgqj"]
-[ext_resource type="Material" uid="uid://sf6sjbf7sucy" path="res://dat/materials/STEEL_A1.tres" id="5_ldmvd"]
-[ext_resource type="PackedScene" uid="uid://dg2b3bc4a52hf" path="res://src/interactables/doors/split_door.tscn" id="6_luu4f"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_mt6ah"]
-material = ExtResource("3_d2f8e")
-size = Vector2(16, 16)
-orientation = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_10c6m"]
-size = Vector3(16, 0.2, 16)
-
-[sub_resource type="QuadMesh" id="QuadMesh_sifdr"]
-material = ExtResource("4_qtgqj")
-size = Vector2(6, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_32ufr"]
-size = Vector3(6, 4, 0.2)
-
-[sub_resource type="QuadMesh" id="QuadMesh_tnupy"]
-material = ExtResource("4_qtgqj")
-flip_faces = true
-size = Vector2(16, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_81855"]
-size = Vector3(16, 4, 0.2)
-
-[sub_resource type="QuadMesh" id="QuadMesh_it67t"]
-material = ExtResource("4_qtgqj")
-size = Vector2(16, 4)
-orientation = 0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_s3wsf"]
-size = Vector3(0.2, 4, 16)
-
-[sub_resource type="QuadMesh" id="QuadMesh_qkbnk"]
-material = ExtResource("4_qtgqj")
-flip_faces = true
-size = Vector2(16, 4)
-orientation = 0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f3f76"]
-size = Vector3(0.2, 4, 16)
-
-[sub_resource type="QuadMesh" id="QuadMesh_8733v"]
-material = ExtResource("5_ldmvd")
-flip_faces = true
-size = Vector2(16, 16)
-orientation = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_h05pd"]
-size = Vector3(16, 0.2, 16)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xgb2u"]
-material = ExtResource("3_d2f8e")
-size = Vector2(4, 8)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3o6ww"]
-size = Vector3(4, 0.2, 8)
-
-[sub_resource type="QuadMesh" id="QuadMesh_aywui"]
-material = ExtResource("4_qtgqj")
-size = Vector2(8, 4)
-orientation = 0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7wo6o"]
-size = Vector3(0.2, 4, 8)
-
-[sub_resource type="QuadMesh" id="QuadMesh_kx4te"]
-material = ExtResource("4_qtgqj")
-flip_faces = true
-size = Vector2(8, 4)
-orientation = 0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5e15v"]
-size = Vector3(0.2, 4, 8)
-
-[sub_resource type="QuadMesh" id="QuadMesh_fxtdt"]
-material = ExtResource("5_ldmvd")
-flip_faces = true
-size = Vector2(4, 8)
-orientation = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_43yx3"]
-size = Vector3(4, 0.2, 8)
+[ext_resource type="PackedScene" uid="uid://2bke43ldkv8r" path="res://dat/maps/KeyShowcase.tscn" id="3_pjf7x"]
+[ext_resource type="PackedScene" uid="uid://dbah5iljp43xj" path="res://src/interactables/doors/split_door.tscn" id="4_o7leo"]
+[ext_resource type="PackedScene" uid="uid://cxwddeqnpg1av" path="res://src/pillars/red_pillar.tscn" id="5_r7lv3"]
+[ext_resource type="PackedScene" uid="uid://b37ibv1ykxwdj" path="res://src/pickups/keys/red_key.tscn" id="6_m518u"]
 
 [node name="DevLevel" instance=ExtResource("1_q3oq5")]
 
 [node name="Player" parent="." index="0" instance=ExtResource("2_4756e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="Room1" type="Node3D" parent="MapData" index="0"]
+[node name="DC-DevLevel" parent="MapData" index="0" instance=ExtResource("3_pjf7x")]
 
-[node name="Floor" type="StaticBody3D" parent="MapData/Room1" index="0"]
+[node name="Doors" type="Node3D" parent="MapData" index="1"]
 
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Floor" index="0"]
-mesh = SubResource("QuadMesh_mt6ah")
+[node name="1" parent="MapData/Doors" index="0" instance=ExtResource("4_o7leo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -11)
 
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Floor" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-shape = SubResource("BoxShape3D_10c6m")
+[node name="2" parent="MapData/Doors" index="1" instance=ExtResource("4_o7leo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -19)
 
-[node name="Walls" type="Node3D" parent="MapData/Room1" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="3" parent="MapData/Doors" index="2" instance=ExtResource("4_o7leo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -49)
 
-[node name="Wall-Z" type="Node3D" parent="MapData/Room1/Walls" index="0"]
+[node name="R1" parent="MapData/Doors" index="3" instance=ExtResource("4_o7leo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -41)
+key_color = 1
+locked = true
 
-[node name="-X" type="StaticBody3D" parent="MapData/Room1/Walls/Wall-Z" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8)
+[node name="RedPillar" parent="MapData/Doors/R1" index="4" instance=ExtResource("5_r7lv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 2)
 
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Walls/Wall-Z/-X" index="0"]
-mesh = SubResource("QuadMesh_sifdr")
+[node name="RedPillar2" parent="MapData/Doors/R1" index="5" instance=ExtResource("5_r7lv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 2)
 
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Walls/Wall-Z/-X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-shape = SubResource("BoxShape3D_32ufr")
+[node name="Keys" type="Node3D" parent="MapData" index="2"]
 
-[node name="+X" type="StaticBody3D" parent="MapData/Room1/Walls/Wall-Z" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8)
+[node name="RedKey" parent="MapData/Keys" index="0" instance=ExtResource("6_m518u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, -30)
 
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Walls/Wall-Z/+X" index="0"]
-mesh = SubResource("QuadMesh_sifdr")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Walls/Wall-Z/+X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-shape = SubResource("BoxShape3D_32ufr")
-
-[node name="Wall+Z" type="StaticBody3D" parent="MapData/Room1/Walls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Walls/Wall+Z" index="0"]
-mesh = SubResource("QuadMesh_tnupy")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Walls/Wall+Z" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-shape = SubResource("BoxShape3D_81855")
-
-[node name="Wall-X" type="StaticBody3D" parent="MapData/Room1/Walls" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Walls/Wall-X" index="0"]
-mesh = SubResource("QuadMesh_it67t")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Walls/Wall-X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-shape = SubResource("BoxShape3D_s3wsf")
-
-[node name="Wall+X" type="StaticBody3D" parent="MapData/Room1/Walls" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Walls/Wall+X" index="0"]
-mesh = SubResource("QuadMesh_qkbnk")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Walls/Wall+X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-shape = SubResource("BoxShape3D_f3f76")
-
-[node name="Ceiling" type="StaticBody3D" parent="MapData/Room1" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room1/Ceiling" index="0"]
-mesh = SubResource("QuadMesh_8733v")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room1/Ceiling" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999999, 0)
-shape = SubResource("BoxShape3D_h05pd")
-
-[node name="Hall" type="Node3D" parent="MapData" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
-
-[node name="Floor" type="StaticBody3D" parent="MapData/Hall" index="0"]
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Hall/Floor" index="0"]
-mesh = SubResource("PlaneMesh_xgb2u")
-skeleton = NodePath("../..")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Hall/Floor" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-shape = SubResource("BoxShape3D_3o6ww")
-
-[node name="Walls" type="Node3D" parent="MapData/Hall" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="Wall-X" type="StaticBody3D" parent="MapData/Hall/Walls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Hall/Walls/Wall-X" index="0"]
-mesh = SubResource("QuadMesh_aywui")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Hall/Walls/Wall-X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-shape = SubResource("BoxShape3D_7wo6o")
-
-[node name="Wall+X" type="StaticBody3D" parent="MapData/Hall/Walls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Hall/Walls/Wall+X" index="0"]
-mesh = SubResource("QuadMesh_kx4te")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Hall/Walls/Wall+X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-shape = SubResource("BoxShape3D_5e15v")
-
-[node name="Ceiling" type="StaticBody3D" parent="MapData/Hall" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Hall/Ceiling" index="0"]
-mesh = SubResource("QuadMesh_fxtdt")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Hall/Ceiling" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_43yx3")
-
-[node name="Room2" type="Node3D" parent="MapData" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
-
-[node name="Floor" type="StaticBody3D" parent="MapData/Room2" index="0"]
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Floor" index="0"]
-mesh = SubResource("QuadMesh_mt6ah")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Floor" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-shape = SubResource("BoxShape3D_10c6m")
-
-[node name="Walls" type="Node3D" parent="MapData/Room2" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 0)
-
-[node name="Wall-Z" type="Node3D" parent="MapData/Room2/Walls" index="0"]
-
-[node name="-X" type="StaticBody3D" parent="MapData/Room2/Walls/Wall-Z" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Walls/Wall-Z/-X" index="0"]
-mesh = SubResource("QuadMesh_sifdr")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Walls/Wall-Z/-X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-shape = SubResource("BoxShape3D_32ufr")
-
-[node name="+X" type="StaticBody3D" parent="MapData/Room2/Walls/Wall-Z" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Walls/Wall-Z/+X" index="0"]
-mesh = SubResource("QuadMesh_sifdr")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Walls/Wall-Z/+X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-shape = SubResource("BoxShape3D_32ufr")
-
-[node name="Wall+Z" type="StaticBody3D" parent="MapData/Room2/Walls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Walls/Wall+Z" index="0"]
-mesh = SubResource("QuadMesh_tnupy")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Walls/Wall+Z" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-shape = SubResource("BoxShape3D_81855")
-
-[node name="Wall-X" type="StaticBody3D" parent="MapData/Room2/Walls" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Walls/Wall-X" index="0"]
-mesh = SubResource("QuadMesh_it67t")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Walls/Wall-X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-shape = SubResource("BoxShape3D_s3wsf")
-
-[node name="Wall+X" type="StaticBody3D" parent="MapData/Room2/Walls" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Walls/Wall+X" index="0"]
-mesh = SubResource("QuadMesh_qkbnk")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Walls/Wall+X" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
-shape = SubResource("BoxShape3D_f3f76")
-
-[node name="Ceiling" type="StaticBody3D" parent="MapData/Room2" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-
-[node name="mesh" type="MeshInstance3D" parent="MapData/Room2/Ceiling" index="0"]
-mesh = SubResource("QuadMesh_8733v")
-
-[node name="col" type="CollisionShape3D" parent="MapData/Room2/Ceiling" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999999, 0)
-shape = SubResource("BoxShape3D_h05pd")
-
-[node name="Doors" type="Node3D" parent="MapData" index="3"]
-
-[node name="HallDoor1" parent="MapData/Doors" index="0" instance=ExtResource("6_luu4f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -9)
-collision_mask = 0
-
-[node name="HallDoor2" parent="MapData/Doors" index="1" instance=ExtResource("6_luu4f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
-collision_mask = 0
+[node name="Label3D" type="Label3D" parent="MapData" index="3"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 1.8, -52)
+shaded = true
+text = ":)"
+font_size = 1024

@@ -1,18 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8dgobnvoj4sw"]
+[gd_scene load_steps=7 format=3 uid="uid://c8dgobnvoj4sw"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_wp7ks"]
-[ext_resource type="PackedScene" uid="uid://dhknhotvf2l32" path="res://src/weapons/pistol.tscn" id="2_0gemn"]
-[ext_resource type="Shader" path="res://dat/materials/shaders/pixelate_screen.gdshader" id="2_qcoe5"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m26uf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hbns6"]
-render_priority = 0
-shader = ExtResource("2_qcoe5")
-
-[sub_resource type="QuadMesh" id="QuadMesh_rq3dq"]
-material = SubResource("ShaderMaterial_hbns6")
-size = Vector2(4, 2)
 
 [sub_resource type="Animation" id="Animation_ajr2d"]
 length = 0.001
@@ -122,13 +112,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera" type="Camera3D" parent="Head"]
 editor_description = "The only children of this should be weapon scenes."
 current = true
-
-[node name="Pistol" parent="Head/Camera" instance=ExtResource("2_0gemn")]
-
-[node name="Pixelation" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-visible = false
-mesh = SubResource("QuadMesh_rq3dq")
 
 [node name="InteractCast" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -3)

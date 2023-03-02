@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyl1glh2pf1o4"
-path.s3tc="res://.godot/imported/FLOOR_1A.png-147d397579e02103b0a08853289ede8e.s3tc.ctex"
+uid="uid://deyvqvv2x0uku"
+path="res://.godot/imported/Door_2A-0-DOOR_2A.png-8aacd9d8a026fbd9cbb4ed2067086142.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://dat/materials/textures/floors/FLOOR_1A.png"
-dest_files=["res://.godot/imported/FLOOR_1A.png-147d397579e02103b0a08853289ede8e.s3tc.ctex"]
+source_file="res://dat/models/Door_2A/Door_2A-0-DOOR_2A.png"
+dest_files=["res://.godot/imported/Door_2A-0-DOOR_2A.png-8aacd9d8a026fbd9cbb4ed2067086142.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

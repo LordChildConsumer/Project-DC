@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b37ibv1ykxwdj"]
+
+[ext_resource type="PackedScene" uid="uid://dtled0pr1jm2q" path="res://src/pickups/keys/key_pickup.tscn" id="1_fuqhd"]
+[ext_resource type="Texture2D" uid="uid://blyabni77n2aw" path="res://dat/skulls/red.png" id="2_a1qgp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3aia8"]
+
+[node name="RedKey" instance=ExtResource("1_fuqhd")]
+type = 1
+
+[node name="Sprite" parent="." index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+modulate = Color(0.494118, 0.494118, 0.494118, 1)
+billboard = 1
+shaded = false
+texture_filter = 0
+texture = ExtResource("2_a1qgp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+visible = false
+mesh = SubResource("SphereMesh_3aia8")
+
+[node name="Glow" parent="." index="3"]
+light_color = Color(1, 0, 0, 1)

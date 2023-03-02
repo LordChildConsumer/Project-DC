@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 ### Constants ###
 const MOVE_SPEED := 7.5;
@@ -16,8 +16,6 @@ const MOUSE_SENS := 0.002;
 
 
 func _ready() -> void:
-	_flashlight();						## Turn the flashlight off
-	$Head/Pixelation.set_visible(true);	## Enable the pixelation effect
 	_capture_mouse();					## Capture the mouse
 
 func _input(_event: InputEvent) -> void:
@@ -80,6 +78,9 @@ func _flashlight() -> void:
 #######################
 
 func _mouselook(event: InputEvent) -> void:
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		return;
+	
 	rotate_y(-event.relative.x * MOUSE_SENS);
 	
 	## TODO: Possibly remove vertical aim for proper doom feel.
