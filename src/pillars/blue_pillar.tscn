@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://155xltynu1m4"]
+
+[ext_resource type="PackedScene" uid="uid://b5oyv6rogbtry" path="res://src/pillars/door_pillar.tscn" id="1_jsa02"]
+[ext_resource type="Texture2D" uid="uid://mpkfirvkvhcy" path="res://dat/skulls/pillars/bluepillar_sheet.png" id="2_fb7w2"]
+
+[node name="BluePillar" instance=ExtResource("1_jsa02")]
+key_color = 2
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_fb7w2")
+
+[node name="Glow" parent="." index="2"]
+light_color = Color(0.0392157, 0.27451, 1, 1)

@@ -1,19 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxwddeqnpg1av"]
+[gd_scene load_steps=3 format=3 uid="uid://cxwddeqnpg1av"]
 
 [ext_resource type="PackedScene" uid="uid://b5oyv6rogbtry" path="res://src/pillars/door_pillar.tscn" id="1_sdkfe"]
 [ext_resource type="Texture2D" uid="uid://cdvsco7uv4ppr" path="res://dat/skulls/pillars/redpillar_sheet.png" id="2_1l7hs"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ls77q"]
-radius = 0.3
 
 [node name="RedPillar" instance=ExtResource("1_sdkfe")]
 key_color = 1
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_1l7hs")
-
-[node name="col" parent="." index="1"]
-shape = SubResource("CylinderShape3D_ls77q")
 
 [node name="Glow" parent="." index="2"]
 light_color = Color(1, 0, 0, 1)

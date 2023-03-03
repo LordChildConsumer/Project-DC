@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsjghjhbye4vv"]
+
+[ext_resource type="PackedScene" uid="uid://dtled0pr1jm2q" path="res://src/pickups/keys/key_pickup.tscn" id="1_gts4h"]
+[ext_resource type="Texture2D" uid="uid://yjtru4bl1ssh" path="res://dat/skulls/blue.png" id="2_0qmut"]
+
+[node name="BlueKey" instance=ExtResource("1_gts4h")]
+type = 2
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_0qmut")
+
+[node name="Glow" parent="." index="2"]
+light_color = Color(0.0392157, 0.27451, 1, 1)

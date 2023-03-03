@@ -9,11 +9,8 @@
 type = 1
 
 [node name="Sprite" parent="." index="0"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 modulate = Color(0.494118, 0.494118, 0.494118, 1)
-billboard = 1
 shaded = false
-texture_filter = 0
 texture = ExtResource("2_a1qgp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]

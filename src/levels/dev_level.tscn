@@ -10,7 +10,10 @@
 [node name="DevLevel" instance=ExtResource("1_q3oq5")]
 
 [node name="Player" parent="." index="0" instance=ExtResource("2_4756e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="SUN" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1, 0)
 
 [node name="DC-DevLevel" parent="MapData" index="0" instance=ExtResource("3_pjf7x")]
 
@@ -39,4 +42,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2.1, 2)
 [node name="Keys" type="Node3D" parent="MapData" index="2"]
 
 [node name="RedKey" parent="MapData/Keys" index="0" instance=ExtResource("6_m518u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, -30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)

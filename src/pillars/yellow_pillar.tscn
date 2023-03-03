@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylbgaa1xf7se"]
+
+[ext_resource type="PackedScene" uid="uid://b5oyv6rogbtry" path="res://src/pillars/door_pillar.tscn" id="1_j55r8"]
+[ext_resource type="Texture2D" uid="uid://byv4cvmjiv6m4" path="res://dat/skulls/pillars/yellowpillar_sheet.png" id="2_xvyno"]
+
+[node name="YellowPillar" instance=ExtResource("1_j55r8")]
+key_color = 3
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_xvyno")
+
+[node name="Glow" parent="." index="2"]
+light_color = Color(1, 1, 0, 1)
