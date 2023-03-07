@@ -15,6 +15,7 @@ const MOUSE_SENS := 0.002;
 @onready var flashlight_toggle := $Head/Flashlight/Toggle;
 
 
+
 func _ready() -> void:
 	_capture_mouse();					## Capture the mouse
 

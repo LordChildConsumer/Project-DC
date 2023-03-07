@@ -1,11 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://lnvw1shlvgml"]
+[gd_scene load_steps=4 format=3 uid="uid://lnvw1shlvgml"]
 
 [ext_resource type="PackedScene" uid="uid://0kvmbhg0w32k" path="res://src/levels/level.tscn" id="1_q3oq5"]
 [ext_resource type="PackedScene" uid="uid://c8dgobnvoj4sw" path="res://src/player/player.tscn" id="2_4756e"]
 [ext_resource type="PackedScene" uid="uid://2bke43ldkv8r" path="res://dat/maps/KeyShowcase.tscn" id="3_pjf7x"]
-[ext_resource type="PackedScene" uid="uid://dbah5iljp43xj" path="res://src/interactables/doors/split_door.tscn" id="4_o7leo"]
-[ext_resource type="PackedScene" uid="uid://cxwddeqnpg1av" path="res://src/pillars/red_pillar.tscn" id="5_r7lv3"]
-[ext_resource type="PackedScene" uid="uid://b37ibv1ykxwdj" path="res://src/pickups/keys/red_key.tscn" id="6_m518u"]
 
 [node name="DevLevel" instance=ExtResource("1_q3oq5")]
 
@@ -17,29 +14,32 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1,
 
 [node name="DC-DevLevel" parent="MapData" index="0" instance=ExtResource("3_pjf7x")]
 
-[node name="Doors" type="Node3D" parent="MapData" index="1"]
+[node name="Lights" type="Node3D" parent="MapData" index="1"]
 
-[node name="1" parent="MapData/Doors" index="0" instance=ExtResource("4_o7leo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -11)
+[node name="OmniLight3D" type="OmniLight3D" parent="MapData/Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+omni_range = 33.0
 
-[node name="2" parent="MapData/Doors" index="1" instance=ExtResource("4_o7leo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -19)
+[node name="OmniLight3D2" type="OmniLight3D" parent="MapData/Lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
+omni_range = 33.0
 
-[node name="3" parent="MapData/Doors" index="2" instance=ExtResource("4_o7leo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -49)
+[node name="OmniLight3D3" type="OmniLight3D" parent="MapData/Lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -30)
+omni_range = 33.0
 
-[node name="R1" parent="MapData/Doors" index="3" instance=ExtResource("4_o7leo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -41)
-key_color = 1
-locked = true
+[node name="OmniLight3D4" type="OmniLight3D" parent="MapData/Lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -45)
+omni_range = 33.0
 
-[node name="RedPillar" parent="MapData/Doors/R1" index="4" instance=ExtResource("5_r7lv3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -2.1, 2)
+[node name="OmniLight3D5" type="OmniLight3D" parent="MapData/Lights" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -60)
+omni_range = 33.0
 
-[node name="RedPillar2" parent="MapData/Doors/R1" index="5" instance=ExtResource("5_r7lv3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2.1, 2)
+[node name="OmniLight3D6" type="OmniLight3D" parent="MapData/Lights" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, -30)
+omni_range = 33.0
 
-[node name="Keys" type="Node3D" parent="MapData" index="2"]
-
-[node name="RedKey" parent="MapData/Keys" index="0" instance=ExtResource("6_m518u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
+[node name="OmniLight3D7" type="OmniLight3D" parent="MapData/Lights" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -30)
+omni_range = 33.0
