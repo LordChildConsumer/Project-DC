@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://onc7klkge0f3"]
+[gd_scene load_steps=4 format=3 uid="uid://onc7klkge0f3"]
 
 [ext_resource type="PackedScene" uid="uid://bdfxnk3pamkmy" path="res://src/enemies/enemy.tscn" id="1_45x00"]
 [ext_resource type="Texture2D" uid="uid://buyu7p7ceiyu6" path="res://dat/enemies/AutoShotgunGuy.png" id="2_5nonk"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_lnuke"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="AutoShotgunGuy" instance=ExtResource("1_45x00")]
 
 [node name="Sprite" parent="." index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_5nonk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+visible = false
+mesh = SubResource("BoxMesh_lnuke")

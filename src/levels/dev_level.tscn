@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lnvw1shlvgml"]
+[gd_scene load_steps=5 format=3 uid="uid://lnvw1shlvgml"]
 
 [ext_resource type="PackedScene" uid="uid://0kvmbhg0w32k" path="res://src/levels/level.tscn" id="1_q3oq5"]
 [ext_resource type="PackedScene" uid="uid://c8dgobnvoj4sw" path="res://src/player/player.tscn" id="2_4756e"]
 [ext_resource type="PackedScene" uid="uid://2bke43ldkv8r" path="res://dat/maps/KeyShowcase.tscn" id="3_pjf7x"]
+[ext_resource type="PackedScene" uid="uid://onc7klkge0f3" path="res://src/enemies/auto_shotgun_guy.tscn" id="4_mvxr4"]
 
 [node name="DevLevel" instance=ExtResource("1_q3oq5")]
 
@@ -43,3 +44,6 @@ omni_range = 33.0
 [node name="OmniLight3D7" type="OmniLight3D" parent="MapData/Lights" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -30)
 omni_range = 33.0
+
+[node name="AutoShotgunGuy" parent="MapData/Lights" index="7" instance=ExtResource("4_mvxr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28, -4)
